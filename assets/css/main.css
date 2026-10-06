@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-panel-deep text-silk font-panel antialiased;
+  }
+}
+
+@layer components {
+  /* Silkscreened section heading with a rule either side, as on the hardware panel. */
+  .section-title {
+    @apply flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-silk;
+  }
+  .section-title::before,
+  .section-title::after {
+    content: '';
+    @apply h-px flex-1 bg-silk/40;
+  }
+  .silk-label {
+    @apply text-[10px] font-medium uppercase leading-none tracking-[0.12em] text-silk;
+  }
+}
